@@ -5,30 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>function</title>
 </head>
+<!--Create a program that asks the user for their age and then uses conditional statements to categorize the age group (e.g., child, teenager, adult, senior citizen) and displays the result.-->
+
 <center>  <form>
     <label > Enter your nationality</label> <br>
     <Input type ="text" id="a1"> <br>
     <label > Enter your age</label> <br>
     <input type ="text" id="a2">
     <br>
-    <Button onclick="check()">check</Button>
+    <button onclick="check()">check</button>
 </form>
 </center>   
-        
-
-
-    </form>
+ 
 <body>
+    
     <script>
-        function data (){
-            Let nation, age;
+        function check (){
+            let nation, age;
             nation = document.getElementById("a1").value;
             age = document.getElementById("a2").value;
-            if (nation =="Malaysia" && age >=18) {
-                alert("You are eligible to give the vote")
+            if(nation ==="Malaysia" && age <= 10) {
+                alert("You are categorized as a child")
             }else{
-                alert("You are not eligible to give vote")
+                alert("You are not categorized as a child")
             } 
+
+            
+            
+            
         } 
 
        

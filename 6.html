@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//Create a program with a global variable and a local variable inside a function. 
+//Demonstrate variable visibility and how the local variable does not affect the global variable.
+
+
+
+        // Global variable
+var globalVariable = "I am a global variable";
+
+// Function with a local variable
+function demonstrateVariableVisibility() {
+    // Local variable
+    var localVariable = "I am a local variable";
+
+    // Displaying both variables
+    console.log("Inside the function:");
+    console.log("Global Variable:", globalVariable);
+    console.log("Local Variable:", localVariable);
+}
+
+// Display the global variable before calling the function
+console.log("Before calling the function:");
+console.log("Global Variable:", globalVariable);
+
+// Call the function
+demonstrateVariableVisibility();
+
+// Display the global variable after calling the function
+console.log("After calling the function:");
+console.log("Global Variable:", globalVariable);
+
+// Attempting to access the local variable outside the function will result in an error
+// console.log("Attempt to access local variable outside the function:", localVariable);
+
+    </script>
+    
+</body>
+</html>

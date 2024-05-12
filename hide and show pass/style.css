@@ -1,0 +1,18 @@
+body{
+    background-color: blue;
+}
+.input-box{
+    background-color: white;
+    max-width: 400px;
+    border-radius: 10px;
+    padding: 10px 10px;
+    margin: 300px; auto;
+    display: flex;
+    align-items: center;
+
+}
+
+.input-box input{
+    width: 100%;
+    padding: 1;
+}

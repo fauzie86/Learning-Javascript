@@ -6,25 +6,26 @@
     <title>function2</title>
 </head>
 <body>
+    <!--Cara bikin user & password bole link ke website-->
     <form>
         <label>Enter your user name or phone</label> <br>
         <Input type="text" id="a1"> <br>
         <label>Enter your password</label> <br>
         <input type="text" id="a2">
         <br>
-        <button>login</button>
+        <button onclick="info()">login</button>
     </form>
 
 
     <script>
-        function info(){
+        function info() {
             var user, pass;
             user = document.getElementById("a1").value;
-            pass = document.getElementById("a.2").value;
-            if ((user =="admin"  || user == 12345) && pass =="malaysia123"){
+            pass = document.getElementById("a2").value;
+            if ((user == "admin" || user == 12345) && pass == "malaysia123" ){
                 window.open("login.html")
             }else{
-                alert("pleade enter your correct details")
+                alert("please enter your correct details")
             }
         }
     </script>

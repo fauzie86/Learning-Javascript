@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .password-strength {
+      margin-top: 10px;
+    }
+  </style>
+  <title>Password Strength Checker</title>
+</head>
+<body>
+<!--make a input field and write a js code in which we can see hide and show the password also check the strenght of password -->
+
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" oninput="checkPasswordStrength()" />
+  <button onclick="togglePasswordVisibility()">Toggle Password Visibility</button>
+  <div class="password-strength" id="password-strength">Password Strength: <span id="strength-text"></span></div>
+
+  <script>
+    function togglePasswordVisibility() {
+      var passwordInput = document.getElementById("password");
+      passwordInput.type = (passwordInput.type === "password") ? "text" : "password";
+    }
+
+    function checkPasswordStrength() {
+      var password = document.getElementById("password").value;
+      var strengthText = document.getElementById("strength-text");
+
+      // Reset the strength text
+      strengthText.innerHTML = "";
+
+      // Minimum length for a strong password
+      var minLength = 8;
+
+      // Regular expressions for different password components
+      var regex = {
+        lowercase: /[a-z]/,
+        uppercase: /[A-Z]/,
+        numbers: /\d/,
+        specialChars: /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/\-]/
+      };
+
+      // Check the length
+      if (password.length < minLength) {
+        strengthText.innerHTML = "Too short";
+        return;
+      }
+
+      // Check for lowercase letters
+      if (!regex.lowercase.test(password)) {
+        strengthText.innerHTML += "Missing lowercase letters, ";
+      }
+
+      // Check for uppercase letters
+      if (!regex.uppercase.test(password)) {
+        strengthText.innerHTML += "Missing uppercase letters, ";
+      }
+
+      // Check for numbers
+      if (!regex.numbers.test(password)) {
+        strengthText.innerHTML += "Missing numbers, ";
+      }
+
+      // Check for special characters
+      if (!regex.specialChars.test(password)) {
+        strengthText.innerHTML += "Missing special characters, ";
+      }
+
+      // If no issues found, it's a strong password
+      if (strengthText.innerHTML === "") {
+        strengthText.innerHTML = "Strong password!";
+      } else {
+        // Remove the trailing comma and space
+        strengthText.innerHTML = strengthText.innerHTML.slice(0, -2);
+      }
+    }
+  </script>
+
+</body>
+</html>

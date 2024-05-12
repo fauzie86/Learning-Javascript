@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Operations</title>
+</head>
+<body>
+    <!--Create a JavaScript program that takes two numbers from the user 
+        and performs arithmetic operations such as addition, subtraction,
+        multiplication, and division on these numbers. Display the results to the user.-->
+
+
+
+
+    <label for="num1">Enter the first number:</label>
+    <input type="number" id="num1">
+
+    <p><label for="num2">Enter the second number:</label>
+    <input type="number" id="num2">
+
+    <p><button onclick="performArithmetic()">Perform Arithmetic Operations</button>
+
+    <div id="result"></div>
+
+    <script>
+        function performArithmetic() {
+    // Get the user input for two numbers
+    var num1 = parseFloat(document.getElementById('num1').value);
+    var num2 = parseFloat(document.getElementById('num2').value);
+
+    // Check if the inputs are valid numbers
+    if (isNaN(num1) || isNaN(num2)) {
+        displayResult("Invalid input. Please enter valid numbers.");
+        return;
+    }
+
+    // Perform arithmetic operations
+    var additionResult = num1 + num2;
+    var subtractionResult = num1 - num2;
+    var multiplicationResult = num1 * num2;
+
+    // Check for division by zero
+    var divisionResult;
+    if (num2 !== 0) {
+        divisionResult = num1 / num2;
+    } else {
+        divisionResult = "Cannot divide by zero";
+    }
+
+    // Display the results in the HTML document
+    displayResult(`
+        <p>Addition Result: ${additionResult}</p>
+        <p>Subtraction Result: ${subtractionResult}</p>
+        <p>Multiplication Result: ${multiplicationResult}</p>
+        <p>Division Result: ${divisionResult}</p>
+    `);
+}
+
+function displayResult(content) {
+    var resultElement = document.getElementById('result');
+    resultElement.innerHTML = content;
+}
+
+    </script>
+</body>
+</html>

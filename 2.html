@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentence Manipulation</title>
+</head>
+<body>
+    <!--Create a function that takes a sentence from the user and manipulates it. The function should:
+Count the number of characters in the sentence.
+Convert the sentence to uppercase.
+Find and display the position of a specific word in the sentence.-->
+
+
+
+
+    <label for="userInput">Enter a sentence:</label>
+    <input type="text" id="userInput">
+    <button onclick="manipulateSentence()">Manipulate Sentence</button>
+
+    <div id="result"></div>
+
+    <script>
+        function manipulateSentence() {
+    // Get the user input
+    var userInput = document.getElementById('userInput').value;
+
+    // Count the number of characters in the sentence
+    var charCount = userInput.length;
+
+    // Convert the sentence to uppercase
+    var uppercaseSentence = userInput.toUpperCase();
+
+    // Find and display the position of a specific word (e.g., "specific") in the sentence
+    var wordToFind = "specific";
+    var wordPosition = userInput.toLowerCase().indexOf(wordToFind.toLowerCase()) + 1;
+
+    // Display the results in the HTML document
+    var resultElement = document.getElementById('result');
+    resultElement.innerHTML = `
+        <p>Original Sentence: ${userInput}</p>
+        <p>Number of Characters: ${charCount}</p>
+        <p>Uppercase Sentence: ${uppercaseSentence}</p>
+        <p>Position of "${wordToFind}": ${wordPosition}</p>
+    `;
+}
+
+    </script>
+</body>
+</html>

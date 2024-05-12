@@ -8,7 +8,7 @@
 <body>
 
     <form>
-        <label>Enter 10,20, or 30</label> <br>
+        <label>Enter 10, 20, or 30</label> <br>
         <Input type="text" id="a1"> <br>
         <br>
         <button>check</button>
@@ -20,12 +20,15 @@
             var num;
             num = document.getElementById("a1").value;
             if(num === 10){
-                document.getElementById("show").innerHTML ="Your entered the number" + num;
-            }else if(num == 20){
+                document.getElementById("show").innerHTML = "Your entered the number" + num;
+            }else if(num === 20){
+                document.getElementById("show").innerHTML = "Your entered the number" + num;
+            }else if (num === 30){
                 document.getElementById("show").innerHTML = "Your entered the number" + num;
             }else{
                 alert("Please enter the correct number")
-            }
+            }   
+               
         }
     </script>
     

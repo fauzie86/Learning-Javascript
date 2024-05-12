@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Group Categorization</title>
+</head>
+<body>
+<script>
+//Create a program that asks the user for their age and then uses conditional
+// statements to categorize the age group (e.g., child, teenager, adult, senior citizen) and displays the result.
+
+
+
+
+    // Ask the user for their age
+var userAge = prompt("Please enter your age:");
+
+// Convert the input to a number
+userAge = parseInt(userAge);
+
+// Get the result element from the HTML document
+var resultElement = document.createElement('p');
+document.body.appendChild(resultElement);
+
+// Check the age group using conditional statements
+if (isNaN(userAge)) {
+    resultElement.textContent = "Invalid input. Please enter a valid number for age.";
+} else {
+    if (userAge < 0) {
+        resultElement.textContent = "Invalid age. Please enter a non-negative number.";
+    } else if (userAge < 13) {
+        resultElement.textContent = "You are a child.";
+    } else if (userAge < 18) {
+        resultElement.textContent = "You are a teenager.";
+    } else if (userAge < 60) {
+        resultElement.textContent = "You are an adult.";
+    } else {
+        resultElement.textContent = "You are a senior citizen.";
+    }
+}
+
+</script>
+
+
+
+
+</body>
+</html>

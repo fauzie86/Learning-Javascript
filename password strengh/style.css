@@ -1,0 +1,21 @@
+body {
+    background-color: brown;
+    font-size: medium;
+    margin: 5px;
+    padding: 10px;
+    background-color: aqua;
+    width: 57px;
+
+}
+.display{
+    width: 100%;
+    margin-top: 50px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 26px 20px;
+    border-radius: 5px;
+}
+
+
